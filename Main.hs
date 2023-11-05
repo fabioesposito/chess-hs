@@ -30,11 +30,11 @@ initializeGame = GameState {
         (Piece King Black, (1, 5)), (Piece Bishop Black, (1, 6)), (Piece Knight Black, (1, 7)), (Piece Rook Black, (1, 8)),
         (Piece Rook White, (8, 1)), (Piece Knight White, (8, 2)), (Piece Bishop White, (8, 3)), (Piece Queen White, (8, 4)),
         (Piece King White, (8, 5)), (Piece Bishop White, (8, 6)), (Piece Knight White, (8, 7)), (Piece Rook White, (8, 8))
-    ] ++ (initializePawns White) ++ (initializePawns Black),
+    ] ++ initializePawns White ++ initializePawns Black,
     turn = White
 }
 
-initializePawns :: PieceColor -> [(Piece, (Position))]
+initializePawns :: PieceColor -> [(Piece, Position)]
 initializePawns White = [(Piece Pawn White, (2, x)) | x <- [1..8]]
 initializePawns Black = [(Piece Pawn Black, (7, x)) | x <- [1..8]]
 
